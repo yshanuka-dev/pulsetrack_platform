@@ -4,7 +4,8 @@
 -- Specification: Question 2 (20 Marks)
 -- ============================================================================
 
-CREATE SCHEMA IF NOT EXISTS pulsetrack_gold;
+DROP SCHEMA IF EXISTS pulsetrack_gold CASCADE;
+CREATE SCHEMA pulsetrack_gold;
 SET search_path TO pulsetrack_gold;
 
 -- ----------------------------------------------------------------------------
@@ -34,7 +35,7 @@ CREATE TABLE IF NOT EXISTS dim_advertiser (
     advertiser_id       VARCHAR(32) NOT NULL,         -- Natural Key (ADVxxxxx)
     advertiser_name     VARCHAR(255) NOT NULL,
     vertical            VARCHAR(100),
-    billing_country     VARCHAR(10),
+    billing_country     VARCHAR(50),
     am_id               VARCHAR(32),                  -- Account Manager Natural Key
     am_name             VARCHAR(255),
     am_team             VARCHAR(100),
@@ -98,7 +99,7 @@ CREATE INDEX IF NOT EXISTS idx_dim_creative_id ON dim_creative (creative_id);
 CREATE TABLE IF NOT EXISTS dim_device_geo (
     device_geo_key      BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
     device_type         VARCHAR(50) NOT NULL,         -- desktop, mobile, tablet, other
-    country_code        VARCHAR(10) NOT NULL,         -- US, GB, CA, etc.
+    country_code        VARCHAR(50) NOT NULL,         -- US, GB, CA, etc.
     CONSTRAINT uq_device_geo UNIQUE (device_type, country_code)
 );
 
@@ -119,7 +120,7 @@ CREATE TABLE IF NOT EXISTS dim_junk_conversion (
 CREATE TABLE IF NOT EXISTS fact_conversion (
     conversion_key      BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
     conversion_id       VARCHAR(32) NOT NULL UNIQUE,  -- Degenerate Dimension
-    conversion_time     TIMESTAMPTZ NOT NULL,
+    conversion_time     TIMESTAMPTZ,
     conversion_date_key INT NOT NULL REFERENCES dim_date(date_key),
     
     -- Dimensional Foreign Keys
@@ -149,7 +150,7 @@ CREATE INDEX IF NOT EXISTS idx_fconv_partner ON fact_conversion (partner_key);
 CREATE TABLE IF NOT EXISTS fact_click (
     click_key           BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
     click_id            VARCHAR(32) NOT NULL UNIQUE,  -- Degenerate Dimension
-    click_time          TIMESTAMPTZ NOT NULL,
+    click_time          TIMESTAMPTZ,
     click_date_key      INT NOT NULL REFERENCES dim_date(date_key),
     
     -- Dimensional Foreign Keys
@@ -174,7 +175,7 @@ CREATE INDEX IF NOT EXISTS idx_fclick_partner ON fact_click (partner_key);
 CREATE TABLE IF NOT EXISTS fact_impression (
     impression_key      BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
     impression_id       VARCHAR(32) NOT NULL UNIQUE,  -- Degenerate Dimension
-    impression_time     TIMESTAMPTZ NOT NULL,
+    impression_time     TIMESTAMPTZ,
     impression_date_key INT NOT NULL REFERENCES dim_date(date_key),
     
     -- Dimensional Foreign Keys
@@ -196,7 +197,7 @@ CREATE TABLE IF NOT EXISTS fact_revenue_adjustment (
     adjustment_id       VARCHAR(32) NOT NULL UNIQUE,  -- Degenerate Dimension
     conversion_key      BIGINT REFERENCES fact_conversion(conversion_key),
     conversion_id       VARCHAR(32) NOT NULL,
-    adjustment_time     TIMESTAMPTZ NOT NULL,
+    adjustment_time     TIMESTAMPTZ,
     adjustment_date_key INT NOT NULL REFERENCES dim_date(date_key),
     
     -- Measures
