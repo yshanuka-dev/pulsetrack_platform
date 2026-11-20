@@ -25,13 +25,16 @@ pulsetrack_platform/
 │   └── data_quality.py                 # Automated DQ test gates & Source-to-Gold ledger
 │
 ├── docs/                               # Assessment Deliverables (Questions 1 - 10)
-│   ├── Q1_Requirements_and_KPIs.md     # Business KPIs, grain specs, freshness SLAs
-│   ├── Q2_Source_Forensics_and_EDW.md  # Forensic report, Star Schema, SCD-2 specs
-│   ├── Q3_Technology_Decision_Record.md# Architecture evaluation & tool selection
-│   ├── Q6_Audit_and_Reconciliation.md  # Quality gates, audit schema, reconciliation proof
-│   ├── Q8_OLAP_Semantic_Model.md       # Cube definitions, hierarchies, measures
-│   ├── Q9_Business_Analytics.md        # Answers to 10 executive business questions
-│   └── Q10_Production_Defense.md       # Lead Data Engineer architectural defense
+│   ├── Q1_Requirements_and_KPIs.md     # Q1: Business KPIs, grain specs, freshness SLAs (15 Marks)
+│   ├── Q2_Source_Forensics_and_EDW.md  # Q2: Forensic report, Star Schema, SCD-2 specs (20 Marks)
+│   ├── Q3_Technology_Decision_Record.md# Q3: Architecture evaluation & tool selection (15 Marks)
+│   ├── Q4_Pipeline_Implementation_Report.md # Q4: Pipeline implementation & Medallion ETL (20 Marks)
+│   ├── Q5_Incremental_and_Idempotency.md    # Q5: Idempotency, late data & recovery tests (10 Marks)
+│   ├── Q6_Data_Quality_and_Audit.md    # Q6: Quality gates, audit schema, reconciliation proof (10 Marks)
+│   ├── Q7_Data_Mart_Design_and_Implementation.md # Q7: Departmental marts & performance (10 Marks)
+│   ├── Q8_OLAP_Semantic_Model.md       # Q8: Cube definitions, hierarchies, measures (15 Marks)
+│   ├── Q9_Business_Analytics.md        # Q9: Answers to 10 executive business questions (10 Marks)
+│   └── Q10_Production_Defense.md       # Q10: Lead Data Engineer architectural defense (5 Marks)
 │
 ├── tests/                              # Automated tests (idempotency, DQ, reconciliation)
 └── requirements.txt                    # Project Python dependencies

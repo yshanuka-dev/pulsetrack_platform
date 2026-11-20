@@ -1,0 +1,115 @@
+{
+  "EQ-1": {
+    "title": "Top Advertisers by Quarterly Revenue",
+    "headers": [
+      "Quarter",
+      "Rank",
+      "Advertiser",
+      "Revenue",
+      "Conversions"
+    ]
+  },
+  "EQ-2": {
+    "title": "Campaigns: High CTR but Low CVR (Funnel Drop-off)",
+    "headers": [
+      "Campaign",
+      "Advertiser",
+      "CTR%",
+      "CVR%",
+      "Funnel Gap"
+    ]
+  },
+  "EQ-3": {
+    "title": "Top 15 Partners by Attributed Revenue (Affiliate ROI)",
+    "headers": [
+      "Partner",
+      "Channel",
+      "Attr.Revenue",
+      "Attr.Convs",
+      "Rev/Conv",
+      "Months"
+    ]
+  },
+  "EQ-4": {
+    "title": "Portfolio MoM Revenue Change",
+    "headers": [
+      "Month",
+      "Revenue",
+      "Prev Revenue",
+      "MoM Delta",
+      "MoM%"
+    ]
+  },
+  "EQ-5": {
+    "title": "Campaigns Exceeding 10% of Advertiser Revenue",
+    "headers": [
+      "Advertiser",
+      "Campaign",
+      "Camp.Revenue",
+      "Adv.Revenue",
+      "% of Adv"
+    ]
+  },
+  "EQ-6": {
+    "title": "Underperforming Campaigns (CVR > 1 StdDev Below Average)",
+    "headers": [
+      "Campaign",
+      "Advertiser",
+      "Avg CVR",
+      "Actual CVR",
+      "CVR Deficit",
+      "Impressions"
+    ]
+  },
+  "EQ-7": {
+    "title": "Advertiser Performance Before/After AM Reassignment (SCD-2)",
+    "headers": [
+      "Advertiser",
+      "Period",
+      "AM Name",
+      "From",
+      "To",
+      "Months",
+      "Gross Rev",
+      "Convs",
+      "Avg/Month"
+    ]
+  },
+  "EQ-8": {
+    "title": "Attribution % Per Partner (Weighted Multi-Touch)",
+    "headers": [
+      "Partner",
+      "Channel",
+      "Attr.Rev",
+      "Attr%",
+      "1st Touch%",
+      "Last Touch%",
+      "Rank"
+    ]
+  },
+  "EQ-9": {
+    "title": "Campaigns: Impressions Rising, Conversions Declining (Creative Fatigue)",
+    "headers": [
+      "Campaign",
+      "Advertiser",
+      "Imp Trend",
+      "Conv Trend",
+      "Months",
+      "Total Imps",
+      "Total Convs"
+    ]
+  },
+  "EQ-10": {
+    "title": "Financial Impact of Late Adjustments (Gross vs Net Reconciliation)",
+    "headers": [
+      "Month",
+      "Gross Rev",
+      "Payout",
+      "Net Margin",
+      "Adj Delta",
+      "Adj Revenue",
+      "Convs",
+      "Adj%"
+    ]
+  }
+}
