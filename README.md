@@ -24,6 +24,10 @@ pulsetrack_platform/
 │   ├── late_adjustments.py             # Incremental processing, idempotency & late revenue
 │   └── data_quality.py                 # Automated DQ test gates & Source-to-Gold ledger
 │
+├── airflow/                            # Apache Airflow Orchestration Suite
+│   ├── dags/                           # Master Medallion Pipeline DAG
+│   └── README.md                       # Airflow deployment & execution guide
+│
 ├── docs/                               # Assessment Deliverables (Questions 1 - 10)
 │   ├── Q1_Requirements_and_KPIs.md     # Q1: Business KPIs, grain specs, freshness SLAs (15 Marks)
 │   ├── Q2_Source_Forensics_and_EDW.md  # Q2: Forensic report, Star Schema, SCD-2 specs (20 Marks)
